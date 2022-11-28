@@ -11,7 +11,10 @@ public class Knight extends ChessFigure {
     @Override
     public boolean canMove(Coordinate to) {
         //TODO: how does Knight can move on chess board?
-        return (Math.abs(from.getX() - to.getX()) == 1 && Math.abs(from.getY() - to.getY()) == 2) ||
+       boolean Step = (Math.abs(from.getX() - to.getX()) == 1 && Math.abs(from.getY() - to.getY()) == 2) ||
                 (Math.abs(from.getX() - to.getX()) == 2 && Math.abs(from.getY() - to.getY()) == 1);
+       boolean Attack = (Math.abs(from.getX() - to.getX()) == 1 && Math.abs(from.getY() - to.getY()) == 2) ||
+                (Math.abs(from.getX() - to.getX()) == 2 && Math.abs(from.getY() - to.getY()) == 1);
+       return Step || Attack;
     }
 }
