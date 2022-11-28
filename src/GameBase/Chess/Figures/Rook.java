@@ -11,6 +11,10 @@ public class Rook extends ChessFigure {
     @Override
     public boolean canMove(Coordinate coordinateTo) {
         //TODO: how does Rook can move on chess board?
-        return false;
+        boolean Step = (Math.abs(from.getX() - to.getX()) == 0 && Math.abs(from.getY() - to.getY()) <= 7) ||
+                (Math.abs(from.getX() - to.getX()) <=7 && Math.abs(from.getY() - to.getY()) == 0);
+        boolean Attack = (Math.abs(from.getX() - to.getX()) == 0 && Math.abs(from.getY() - to.getY()) <= 7) ||
+                (Math.abs(from.getX() - to.getX()) <=7 && Math.abs(from.getY() - to.getY()) == 0);
+        return Step || Attack;
     }
 }
